@@ -52,17 +52,15 @@ document.querySelectorAll('.fade-in, .slide-in').forEach(el => observer.observe(
 const babList = ['bab-intro', 'bab-1', 'bab-2', 'bab-3', 'bab-4', 'bab-5'];
 let currentBabIndex = 0;
 
-// Fungsi Menampilkan/Menyembunyikan Sidebar
+// Menampilkan/Menyembunyikan Sidebar (Desktop & Mobile)
 function toggleSidebar() {
     const sidebar = document.getElementById('lmsSidebar');
     if(sidebar) {
-        // Jika sedang hidden (desktop mode awal) atau tidak ada class open
         if (sidebar.classList.contains('hidden')) {
             sidebar.classList.remove('hidden');
             sidebar.classList.add('open');
         } else {
             sidebar.classList.toggle('open');
-            // Untuk layar besar jika mau disembunyikan total
             if(window.innerWidth > 768) {
                 sidebar.classList.toggle('hidden');
             }
@@ -70,66 +68,68 @@ function toggleSidebar() {
     }
 }
 
-// Fungsi Berpindah BAB
+// Berpindah BAB
 function showBab(babId) {
-    // Sembunyikan semua Bab
     document.querySelectorAll('.content-wrapper').forEach(wrapper => {
         wrapper.classList.remove('active');
     });
     
-    // Nonaktifkan semua menu sidebar
     document.querySelectorAll('.sidebar-item').forEach(item => {
         item.classList.remove('active');
     });
 
-    // Tampilkan Bab Target
     const targetBab = document.getElementById(babId);
     if(targetBab) targetBab.classList.add('active');
     
-    // Aktifkan menu sidebar yang dipilih
     const activeSidebar = document.querySelector(`.sidebar-item[onclick="showBab('${babId}')"]`);
     if(activeSidebar) activeSidebar.classList.add('active');
 
-    // Reset Subbab ke yang pertama di bab tersebut
+    // Otomatis pilih tab pertama dari BAB yang diklik
     const firstSubBtn = targetBab.querySelector('.subbab-btn');
-    if(firstSubBtn) {
-        firstSubBtn.click(); // Otomatis klik subbab pertama
-    }
+    if(firstSubBtn) firstSubBtn.click();
 
-    // Update current index untuk tombol prev/next
     currentBabIndex = babList.indexOf(babId);
 
-    // Otomatis tutup sidebar di HP setelah memilih
+    // Otomatis tutup sidebar di Mobile setelah klik
     if(window.innerWidth <= 768) {
         document.getElementById('lmsSidebar').classList.remove('open');
     }
 
-    // Scroll ke atas
+    // Scroll ke atas halaman materi
     const contentArea = document.querySelector('.lms-content-area');
     if(contentArea) contentArea.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-// Fungsi Berpindah SUBBAB dalam 1 BAB
-function showSubbab(subId, btnElement) {
-    // Cari container Bab dari tombol yang diklik
-    const babContainer = btnElement.closest('.content-wrapper');
+// Berpindah SUBBAB dalam 1 BAB (termasuk Video, Game, Kuis)
+function showSubbab(subId, btnId) {
+    const targetSub = document.getElementById(subId);
+    if(!targetSub) return;
     
-    // Sembunyikan semua sub-content di dalam bab ini
+    const babContainer = targetSub.closest('.content-wrapper');
+    
+    // Sembunyikan konten lain di Bab ini
     babContainer.querySelectorAll('.sub-content').forEach(sub => {
         sub.classList.remove('active');
     });
 
-    // Hapus class active dari semua tombol subbab di dalam bab ini
+    // Hilangkan efek aktif di semua tombol subbab
     babContainer.querySelectorAll('.subbab-btn').forEach(btn => {
         btn.classList.remove('active');
     });
 
-    // Tampilkan sub-content target dan aktifkan tombolnya
-    document.getElementById(subId).classList.add('active');
-    btnElement.classList.add('active');
+    // Tampilkan konten yang dipilih
+    targetSub.classList.add('active');
+    const btnElement = document.getElementById(btnId);
+    if(btnElement) btnElement.classList.add('active');
+
+    // Auto-scroll halus ke area navigasi subbab agar siswa fokus
+    const navBar = babContainer.querySelector('.subbab-nav');
+    if(navBar) {
+        navBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
-// Fungsi Navigasi Bawah (Sebelumnya / Selanjutnya)
+// Navigasi Pindah BAB dari tombol paling bawah
 function prevBab() {
     if (currentBabIndex > 0) {
         showBab(babList[currentBabIndex - 1]);
@@ -144,10 +144,10 @@ function nextBab() {
     }
 }
 
-// Inisialisasi tampilan awal LMS (Mobile sidebar hidden by default)
+// Set up UI awal saat halaman dibuka
 window.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('lmsSidebar');
     if(sidebar && window.innerWidth <= 768) {
-        sidebar.classList.remove('hidden'); // Pakai sistem translate open/close di mobile
+        sidebar.classList.remove('hidden'); 
     }
 });
