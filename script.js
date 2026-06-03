@@ -1,29 +1,47 @@
-// ================= HAMBURGER MENU =================
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("nav-menu");
+// Navigasi Mobile Menu
+const mobileMenu = document.getElementById('mobile-menu');
+const navMenu = document.getElementById('nav-menu');
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
+
+// Tutup menu saat link diklik (di HP)
+const navLinks = document.querySelectorAll('.nav-links');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if(navMenu) navMenu.classList.remove('active');
+    });
 });
 
-// ================= SMOOTH SCROLL =================
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    target.scrollIntoView({ behavior: "smooth" });
-  });
+// Smooth Scrolling untuk menu navbar
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 70, // Offset ukuran navbar
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
-// ================= ANIMASI SCROLL =================
-const sections = document.querySelectorAll(".section");
+// Animasi Fade-in (Intersection Observer) saat scroll
+const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); 
+        }
+    });
+}, observerOptions);
 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const pos = sec.getBoundingClientRect().top;
-    if(pos < window.innerHeight - 100){
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }
-  });
-});
+// Daftarkan elemen yang akan dianimasi
+const animatedElements = document.querySelectorAll('.fade-in, .slide-in');
+animatedElements.forEach(el => observer.observe(el));
