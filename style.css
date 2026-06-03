@@ -2,12 +2,12 @@
    GLOBAL VARIABLES & RESET
 ========================================= */
 :root {
-    --primary: #1E88E5;       /* Biru Sesuai Permintaan */
+    --primary: #1E88E5;       
     --primary-dark: #1565C0;
-    --secondary: #FFFFFF;     /* Putih */
-    --accent: #4CAF50;        /* Hijau */
+    --secondary: #FFFFFF;     
+    --accent: #4CAF50;        
     --accent-dark: #388E3C;
-    --card-bg: #FFF59D;       /* Kuning Muda (Ramah Anak) */
+    --card-bg: #FFF59D;       
     --text-main: #FFFFFF;
     --text-dark: #333333;
     --text-muted: #666666;
@@ -74,7 +74,7 @@ footer { background-color: var(--text-dark); color: var(--text-main); text-align
 ========================================= */
 .lms-wrapper { display: flex; height: 100vh; overflow: hidden; background: var(--bg-light); flex-direction: column; }
 
-/* HEADER LMS (Memuat Tombol Sidebar) */
+/* HEADER LMS */
 .lms-topbar { background: var(--primary); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; position: relative; }
 .btn-toggle-sidebar { background: var(--card-bg); color: var(--primary-dark); border: none; padding: 10px 20px; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 1rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.3s; }
 .btn-toggle-sidebar:hover { background: #FFF; transform: scale(1.02); }
@@ -83,10 +83,10 @@ footer { background-color: var(--text-dark); color: var(--text-main); text-align
 .btn-home-top { background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 8px 16px; border-radius: 12px; font-weight: bold; transition: 0.3s; }
 .btn-home-top:hover { background: white; color: var(--primary); }
 
-/* MAIN LAYOUT (Sidebar + Content) */
+/* MAIN LAYOUT */
 .lms-body { display: flex; flex: 1; overflow: hidden; position: relative; }
 
-/* SIDEBAR LMS (Hanya berisi BAB) */
+/* SIDEBAR LMS */
 .lms-sidebar { width: 280px; background: var(--secondary); border-right: 2px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.3s ease; z-index: 100; overflow-y: auto; }
 .lms-sidebar.hidden { transform: translateX(-100%); position: absolute; height: 100%; }
 
@@ -96,56 +96,59 @@ footer { background-color: var(--text-dark); color: var(--text-main); text-align
 .sidebar-item.active { background: #E3F2FD; color: var(--primary); border-color: var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 .sidebar-item .icon-bab { margin-right: 10px; font-size: 1.2rem; }
 
-/* AREA KONTEN (Lebar Dibatasi) */
-.lms-content-area { flex: 1; padding: 20px; overflow-y: auto; transition: 0.3s; background: var(--bg-light); }
+/* AREA KONTEN */
+.lms-content-area { flex: 1; padding: 20px; overflow-y: auto; transition: 0.3s; background: var(--bg-light); scroll-behavior: smooth; }
 .content-wrapper { max-width: 1000px; margin: 0 auto; background: var(--secondary); padding: 30px; border-radius: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: none; }
 .content-wrapper.active { display: block; animation: fadeIn 0.4s ease; }
 
-/* HEADER BAB DALAM KONTEN */
+/* HEADER BAB */
 .bab-header { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 3px dashed var(--border-color); }
 .bab-title { color: var(--primary); font-size: 2.2rem; margin-bottom: 10px; line-height: 1.3; }
 .kid-intro { font-size: 1.15rem; color: var(--text-dark); background: #E3F2FD; padding: 15px 20px; border-radius: 16px; display: inline-block; text-align: left; max-width: 800px; border-left: 6px solid var(--primary); }
 
 /* SUBBAB NAVIGASI DI ATAS MATERI */
-.subbab-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; background: #F8F9FA; padding: 15px; border-radius: 20px; border: 2px solid var(--border-color); }
-.subbab-btn { background: var(--secondary); border: 2px solid #CCC; border-radius: 30px; padding: 10px 20px; font-weight: 700; cursor: pointer; color: var(--text-muted); transition: 0.3s; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.subbab-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; justify-content: center; background: #F8F9FA; padding: 15px; border-radius: 20px; border: 2px solid var(--border-color); }
+.subbab-btn { background: var(--secondary); border: 2px solid #CCC; border-radius: 30px; padding: 10px 18px; font-weight: 700; cursor: pointer; color: var(--text-muted); transition: 0.3s; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
 .subbab-btn:hover { border-color: var(--primary); color: var(--primary); }
-.subbab-btn.active { background: var(--accent); color: white; border-color: var(--accent-dark); transform: scale(1.05); box-shadow: 0 4px 10px rgba(76,175,80,0.3); }
-.subbab-btn.btn-game { background: var(--card-bg); color: var(--text-dark); border-color: #FBC02D; }
-.subbab-btn.btn-game.active { background: #FBC02D; color: white; }
+.subbab-btn.active { background: var(--primary); color: white; border-color: var(--primary-dark); transform: scale(1.05); box-shadow: 0 4px 10px rgba(30,136,229,0.3); }
+.subbab-btn.btn-media { background: var(--card-bg); color: var(--text-dark); border-color: #FBC02D; }
+.subbab-btn.btn-media.active { background: #FBC02D; color: white; }
 
 /* KONTEN SUBBAB (Gambar, Video, Teks) */
-.sub-content { display: none; text-align: center; }
+.sub-content { display: none; text-align: center; padding: 10px 0; }
 .sub-content.active { display: block; animation: fadeIn 0.4s ease; }
 .sub-content p { font-size: 1.1rem; margin-bottom: 15px; text-align: left; }
 
-/* Batasi Ukuran Gambar */
-.sub-content img { display: block; max-width: 100%; width: auto; height: auto; max-height: 800px; margin: 20px auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+/* Batasi Ukuran Gambar & Video */
+.sub-content img { display: block; max-width: 100%; width: auto; height: auto; margin: 20px auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 @media (min-width: 768px) { .sub-content img { max-width: 600px; } }
 
-/* Batasi Ukuran Video */
 .iframe-wrapper { max-width: 700px; margin: 30px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 .iframe-container { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
 .iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-/* Area Game & Kuis (Card Ekstra) */
+/* INNER NAVIGASI SUBBAB (Di Dalam Materi) */
+.inner-navigation { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 2px dashed var(--border-color); flex-wrap: wrap; gap: 15px; }
+.btn-inner { background: var(--primary); color: white; padding: 12px 25px; border-radius: 16px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; font-size: 1rem; box-shadow: 0 4px 10px rgba(30,136,229,0.3); }
+.btn-inner:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+/* Area Game & Kuis */
 .action-box { background: #E8F5E9; padding: 30px; border-radius: 20px; border: 3px dashed var(--accent); margin-top: 20px; }
 .action-box h3 { color: var(--accent-dark); margin-bottom: 10px; font-size: 1.5rem; }
 .btn-action-large { display: inline-block; background: var(--accent); color: white; padding: 15px 30px; border-radius: 30px; font-size: 1.2rem; font-weight: bold; text-decoration: none; margin-top: 15px; box-shadow: 0 4px 10px rgba(76,175,80,0.4); transition: 0.3s; }
 .btn-action-large:hover { background: var(--accent-dark); transform: translateY(-3px); }
 
-/* TOMBOL NAVIGASI BAWAH (Prev, Home, Next) */
+/* TOMBOL NAVIGASI BAWAH (Prev Bab, Next Bab) */
 .bab-navigation { margin-top: 50px; padding-top: 20px; border-top: 2px solid var(--border-color); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
 .btn-nav-bottom { background: #F0F0F0; border: none; padding: 12px 20px; border-radius: 12px; font-weight: bold; color: var(--text-dark); cursor: pointer; transition: 0.3s; flex: 1; text-align: center; text-decoration: none; }
 .btn-nav-bottom:hover { background: #E0E0E0; }
-.btn-next-bab { background: var(--primary); color: white; }
-.btn-next-bab:hover { background: var(--primary-dark); }
+.btn-next-bab { background: var(--accent); color: white; }
+.btn-next-bab:hover { background: var(--accent-dark); }
 
 /* =========================================
    RESPONSIVE (MOBILE & TABLET)
 ========================================= */
 @media (max-width: 900px) {
-    /* Portal Landing Page Nav */
     .nav-menu { position: absolute; top: 70px; left: -100%; flex-direction: column; background: var(--secondary); width: 100%; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); transition: 0.3s; }
     .nav-menu.active { left: 0; }
     .menu-toggle { display: flex; }
@@ -153,7 +156,7 @@ footer { background-color: var(--text-dark); color: var(--text-main); text-align
 }
 
 @media (max-width: 768px) {
-    /* Sidebar Mobile: Default Tertutup (absolute position) */
+    /* Sidebar Mobile */
     .lms-sidebar { position: absolute; height: 100%; box-shadow: 5px 0 15px rgba(0,0,0,0.1); transform: translateX(-100%); }
     .lms-sidebar.open { transform: translateX(0); }
     
@@ -161,15 +164,17 @@ footer { background-color: var(--text-dark); color: var(--text-main); text-align
     .lms-content-area { padding: 16px; width: 100%; }
     .content-wrapper { padding: 20px; border-radius: 16px; }
     
-    /* Typografi & Tombol Mobile Proporsional */
+    /* Typografi Mobile */
     .bab-title { font-size: 1.6rem; }
     .kid-intro { font-size: 1rem; padding: 12px; }
     .subbab-btn { width: 100%; font-size: 0.95rem; }
     .sub-content p { font-size: 0.95rem; }
     
-    .btn-toggle-sidebar span { display: none; } /* Hanya tampilkan ikon burger di layar kecil */
+    .btn-toggle-sidebar span { display: none; } 
     
-    /* Navigasi Bawah Full Width */
+    /* Navigasi Full Width */
+    .inner-navigation { flex-direction: column; }
+    .btn-inner { width: 100%; margin-bottom: 10px; }
     .bab-navigation { flex-direction: column; }
     .btn-nav-bottom { width: 100%; }
 }
