@@ -18,18 +18,18 @@
             <img src="https://i.ibb.co.com/nNKJsj7g/LOGO-GENMU.jpg" alt="Gen-Mu">
             <span>Kelas 3 MI</span>
         </div>
-        <a href="index.html" class="btn-home-top">🏠 Keluar</a>
+        <a href="index.html" class="btn-home-top">🏠 Ke Beranda</a>
     </header>
 
     <div class="lms-body">
         <aside class="lms-sidebar" id="lmsSidebar">
             <ul class="sidebar-menu">
                 <li class="sidebar-item active" onclick="showBab('bab-intro')"><span class="icon-bab">🌟</span> Pendahuluan</li>
-                <li class="sidebar-item" onclick="showBab('bab-1')"><span class="icon-bab">📖</span> BAB 1: Rawatib</li>
-                <li class="sidebar-item" onclick="showBab('bab-2')"><span class="icon-bab">🌙</span> BAB 2: Shalat Malam</li>
-                <li class="sidebar-item" onclick="showBab('bab-3')"><span class="icon-bab">🕌</span> BAB 3: Kondisi Khusus</li>
-                <li class="sidebar-item" onclick="showBab('bab-4')"><span class="icon-bab">🌅</span> BAB 4: Puasa Ramadhan</li>
-                <li class="sidebar-item" onclick="showBab('bab-5')"><span class="icon-bab">✨</span> BAB 5: Puasa Sunnah</li>
+                <li class="sidebar-item" onclick="showBab('bab-1')"><span class="icon-bab">📖</span> BAB 1 Shalat Sunnah Rawatib</li>
+                <li class="sidebar-item" onclick="showBab('bab-2')"><span class="icon-bab">🌙</span> BAB 2 Shalat Malam</li>
+                <li class="sidebar-item" onclick="showBab('bab-3')"><span class="icon-bab">🕌</span> BAB 3 Kemudahan Shalat</li>
+                <li class="sidebar-item" onclick="showBab('bab-4')"><span class="icon-bab">🌅</span> BAB 4 Puasa Wajib (Ramadan)</li>
+                <li class="sidebar-item" onclick="showBab('bab-5')"><span class="icon-bab">✨</span> BAB 5 Puasa Sunnah</li>
             </ul>
         </aside>
 
@@ -38,56 +38,112 @@
             <div id="bab-intro" class="content-wrapper active">
                 <div class="bab-header">
                     <h1 class="bab-title">Selamat Datang Pahlawan Cilik! 👋</h1>
-                    <p class="kid-intro">Halo teman-teman! Di Ruang Belajar Gen-Mu ini, kita akan bertualang mempelajari serunya ibadah Shalat dan Puasa. Silakan pilih tombol materi di bagian atas atau menu di sebelah kiri untuk mulai belajar ya!</p>
+                    <p class="kid-intro">Halo teman-teman! Di Ruang Belajar Gen-Mu ini, kita akan bertualang mempelajari serunya ibadah Shalat dan Puasa. Siap menjadi anak hebat yang disayang Allah? Yuk, pilih materi di sebelah kiri untuk mulai belajar!</p>
                 </div>
                 <div class="sub-content active" style="text-align: center;">
-                    <img src="https://i.ibb.co.com/nNKJsj7g/LOGO-GENMU.jpg" alt="Logo Gen-Mu" style="max-width: 300px;">
+                    <img src="https://i.ibb.co.com/nNKJsj7g/LOGO-GENMU.jpg" alt="Logo Gen-Mu" style="max-width: 250px;">
                     <br><br>
-                    <button class="btn-next-bab btn-nav-bottom" onclick="nextBab()" style="display:inline-block; max-width: 300px;">Mulai Belajar BAB 1 ➔</button>
+                    <button class="btn-next-bab btn-nav-bottom" onclick="showBab('bab-1')" style="display:inline-block; max-width: 300px; padding: 15px; font-size:1.1rem;">Mulai Belajar BAB 1 ➔</button>
                 </div>
             </div>
 
             <div id="bab-1" class="content-wrapper">
                 <div class="bab-header">
                     <h1 class="bab-title">BAB 1: Shalat Sunnah Rawatib</h1>
-                    <p class="kid-intro">Halo teman-teman hebat! 👋 Pada bab ini kita akan bertualang mengenal Shalat Sunnah Rawatib pengawal ibadah kita. Yuk kita cari tahu kapan waktunya dan apa saja keistimewaannya!</p>
+                    <p class="kid-intro">Halo teman-teman hebat! 👋 Pada materi kali ini kita akan belajar tentang shalat sunnah rawatib. Yuk kita cari tahu apa itu shalat rawatib dan mengapa kita dianjurkan untuk melaksanakannya.</p>
                 </div>
 
                 <div class="subbab-nav">
-                    <button class="subbab-btn active" onclick="showSubbab('b1-materi', this)">📚 Materi Bacaan</button>
-                    <button class="subbab-btn" onclick="showSubbab('b1-video', this)">🎬 Video Belajar</button>
-                    <button class="subbab-btn btn-game" onclick="showSubbab('b1-kuis', this)">🎮 Kuis & Game</button>
+                    <button id="btn-b1-s1" class="subbab-btn active" onclick="showSubbab('b1-s1', 'btn-b1-s1')">1. Pengertian</button>
+                    <button id="btn-b1-s2" class="subbab-btn" onclick="showSubbab('b1-s2', 'btn-b1-s2')">2. Macam-Macam</button>
+                    <button id="btn-b1-s3" class="subbab-btn" onclick="showSubbab('b1-s3', 'btn-b1-s3')">3. Tata Cara</button>
+                    <button id="btn-b1-s4" class="subbab-btn" onclick="showSubbab('b1-s4', 'btn-b1-s4')">4. Hikmah</button>
+                    <button id="btn-b1-vid" class="subbab-btn btn-media" onclick="showSubbab('b1-video', 'btn-b1-vid')">🎥 Video</button>
+                    <button id="btn-b1-game" class="subbab-btn btn-media" onclick="showSubbab('b1-game', 'btn-b1-game')">🎮 Game</button>
+                    <button id="btn-b1-quiz" class="subbab-btn btn-media" onclick="showSubbab('b1-kuis', 'btn-b1-quiz')">📝 Quiz</button>
                 </div>
 
-                <div id="b1-materi" class="sub-content active">
-                    <p><b>Apa sih Shalat Rawatib itu?</b> Yuk perhatikan gambar-gambar keren di bawah ini agar kamu makin paham!</p>
+                <div id="b1-s1" class="sub-content active">
+                    <p><b>Apa sih Shalat Rawatib itu?</b></p>
+                    <p>Shalat Rawatib adalah shalat pengawal yang bertugas menemani shalat wajib kita. Seperti seorang raja yang memiliki pengawal, shalat fardhu kita juga punya pengawal hebat bernama Rawatib!</p>
                     <img src="https://i.ibb.co.com/bjLy00SD/1.png" alt="Materi 1">
                     <img src="https://i.ibb.co.com/tMqqQ2B3/2.png" alt="Pengertian Rawatib">
-                    <img src="https://i.ibb.co.com/0RJmTRHN/3.png" alt="Fungsi">
-                    <p>Shalat ini dikerjakan <b>sebelum (Qabliyah)</b> dan <b>sesudah (Ba'diyah)</b> shalat fardhu. Ingat baik-baik jumlah rakaatnya ya!</p>
+                    
+                    <div class="inner-navigation">
+                        <div></div> <button class="btn-inner" onclick="showSubbab('b1-s2', 'btn-b1-s2')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b1-s2" class="sub-content">
+                    <p><b>Macam-Macam Shalat Rawatib</b></p>
+                    <p>Shalat Rawatib terbagi menjadi dua teman-teman! Ada yang dikerjakan sebelum shalat wajib (disebut <b>Qabliyah</b>), dan ada yang dikerjakan sesudahnya (disebut <b>Ba'diyah</b>).</p>
                     <img src="https://i.ibb.co.com/svcGMx2N/4.png" alt="Waktu qabliyah">
                     <img src="https://i.ibb.co.com/WNx2Nj4D/5.png" alt="Waktu ba’diyah">
+                    
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b1-s1', 'btn-b1-s1')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b1-s3', 'btn-b1-s3')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b1-s3" class="sub-content">
+                    <p><b>Tata Cara Shalat Rawatib</b></p>
+                    <p>Mengerjakannya sama persis seperti shalat biasa kok! Yang membedakan hanya niat dan jumlah rakaatnya. Yuk ingat-ingat berapa rakaat untuk masing-masing waktu shalat.</p>
                     <img src="https://i.ibb.co.com/BVxQyyqM/6.png" alt="Jumlah rakaat">
-                    <p>Wah, manfaatnya sangat besar lho! Allah akan membangunkan istana di surga untuk kita.</p>
-                    <img src="https://i.ibb.co.com/RpjzxMMG/7.png" alt="Manfaat">
                     <img src="https://i.ibb.co.com/HpGpZwFJ/8.png" alt="Cara mengerjakan">
+                    
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b1-s2', 'btn-b1-s2')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b1-s4', 'btn-b1-s4')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b1-s4" class="sub-content">
+                    <p><b>Hikmah Shalat Rawatib</b></p>
+                    <p>Wah, pahalanya luar biasa teman-teman! Salah satunya, Allah akan membangunkan istana yang sangat indah di surga untuk kita lho. Siapa yang mau punya istana di surga?</p>
+                    <img src="https://i.ibb.co.com/0RJmTRHN/3.png" alt="Fungsi">
+                    <img src="https://i.ibb.co.com/RpjzxMMG/7.png" alt="Manfaat">
+                    
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b1-s3', 'btn-b1-s3')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b1-video', 'btn-b1-vid')" style="background:var(--accent);">Tonton Video 🎥 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b1-video" class="sub-content">
-                    <p>Waktunya bersantai! Yuk tonton video animasi seru ini agar belajarmu makin asyik.</p>
+                    <p>Waktunya bersantai! Yuk tonton video animasi seru di bawah ini agar belajarmu makin jelas dan asyik.</p>
                     <div class="iframe-wrapper">
                         <div class="iframe-container">
                             <iframe src="https://www.youtube.com/embed/7o30T9-NYI4" allowfullscreen></iframe>
                         </div>
                     </div>
+                    
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b1-s4', 'btn-b1-s4')">⬅ Kembali ke Materi</button>
+                        <button class="btn-inner" onclick="showSubbab('b1-game', 'btn-b1-game')" style="background:#FBC02D; color:#333;">Main Game 🎮 ➡</button>
+                    </div>
+                </div>
+
+                <div id="b1-game" class="sub-content">
+                    <div class="action-box">
+                        <h3>Misi Bermainmu! 🎮</h3>
+                        <p>Ayo bermain sambil mengingat pelajaran tadi. Klik tombol di bawah untuk mulai petualangan ya!</p>
+                        <a href="https://gemini.google.com/share/a2b81728db79" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">Mulai Main Game</a>
+                    </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b1-video', 'btn-b1-vid')">⬅ Tonton Video Lagi</button>
+                        <button class="btn-inner" onclick="showSubbab('b1-kuis', 'btn-b1-quiz')" style="background:var(--primary);">Lanjut ke Quiz 📝 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b1-kuis" class="sub-content">
                     <div class="action-box">
-                        <h3>Saatnya Uji Kehebatanmu! 🌟</h3>
-                        <p>Buktikan kalau kamu sudah paham materi ini dengan bermain game dan mengisi kuis berikut.</p>
-                        <a href="https://gemini.google.com/share/a2b81728db79" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">🎮 Main Petualangan Rawatib</a>
-                        <a href="https://forms.gle/naRSzzyEVoJLH29X8" target="_blank" class="btn-action-large">📝 Kerjakan Kuis Pintar</a>
+                        <h3>Uji Kehebatanmu! 📝</h3>
+                        <p>Buktikan kalau kamu sudah hafal dan paham! Jawab pertanyaan kuisnya dan dapatkan skor terbaikmu.</p>
+                        <a href="https://forms.gle/naRSzzyEVoJLH29X8" target="_blank" class="btn-action-large">Kerjakan Kuis Sekarang</a>
+                    </div>
+                    <div class="inner-navigation" style="justify-content: center;">
+                        <button class="btn-inner" onclick="showSubbab('b1-game', 'btn-b1-game')">⬅ Kembali ke Game</button>
                     </div>
                 </div>
 
@@ -99,44 +155,97 @@
 
             <div id="bab-2" class="content-wrapper">
                 <div class="bab-header">
-                    <h1 class="bab-title">BAB 2: Shalat Malam Hari</h1>
-                    <p class="kid-intro">Wah, Ramadhan tiba! Siapa nih yang suka ikut shalat malam bersama ayah bunda di masjid? Ayo kita pelajari asyiknya Shalat Tarawih dan Witir!</p>
+                    <h1 class="bab-title">BAB 2: Shalat Malam (Tarawih & Witir)</h1>
+                    <p class="kid-intro">Wah, Ramadhan tiba! Siapa nih yang suka ikut ayah bunda pergi ke masjid setelah Isya? Yuk kita pelajari keseruan Shalat Tarawih dan Witir!</p>
                 </div>
 
                 <div class="subbab-nav">
-                    <button class="subbab-btn active" onclick="showSubbab('b2-materi', this)">📚 Materi Bacaan</button>
-                    <button class="subbab-btn" onclick="showSubbab('b2-video', this)">🎬 Video Belajar</button>
-                    <button class="subbab-btn btn-game" onclick="showSubbab('b2-kuis', this)">🎮 Kuis & Game</button>
+                    <button id="btn-b2-s1" class="subbab-btn active" onclick="showSubbab('b2-s1', 'btn-b2-s1')">1. Pengertian</button>
+                    <button id="btn-b2-s2" class="subbab-btn" onclick="showSubbab('b2-s2', 'btn-b2-s2')">2. Waktu</button>
+                    <button id="btn-b2-s3" class="subbab-btn" onclick="showSubbab('b2-s3', 'btn-b2-s3')">3. Tata Cara</button>
+                    <button id="btn-b2-s4" class="subbab-btn" onclick="showSubbab('b2-s4', 'btn-b2-s4')">4. Keutamaan</button>
+                    <button id="btn-b2-vid" class="subbab-btn btn-media" onclick="showSubbab('b2-video', 'btn-b2-vid')">🎥 Video</button>
+                    <button id="btn-b2-game" class="subbab-btn btn-media" onclick="showSubbab('b2-game', 'btn-b2-game')">🎮 Game</button>
+                    <button id="btn-b2-quiz" class="subbab-btn btn-media" onclick="showSubbab('b2-kuis', 'btn-b2-quiz')">📝 Quiz</button>
                 </div>
 
-                <div id="b2-materi" class="sub-content active">
-                    <p><b>Shalat Tarawih</b> adalah shalat khusus di bulan Ramadhan. Berapa rakaat yang biasa teman-teman kerjakan?</p>
+                <div id="b2-s1" class="sub-content active">
+                    <p><b>Apa itu Tarawih dan Witir?</b></p>
+                    <p>Shalat Tarawih adalah shalat malam yang sangat spesial karena hanya ada di bulan Ramadhan! Sedangkan Shalat Witir adalah shalat yang menjadi penutup malam kita dengan jumlah rakaat yang ganjil.</p>
                     <img src="https://i.ibb.co.com/PzTjqrrT/1.png" alt="Materi">
                     <img src="https://i.ibb.co.com/Y76jRjG3/2.png" alt="Pengertian">
-                    <img src="https://i.ibb.co.com/s9jG4rJQ/3.png" alt="Hukum">
-                    <img src="https://i.ibb.co.com/HfGM2BKq/4.png" alt="Jumlah rakaat">
-                    <p>Setelah Tarawih, kita menyempurnakan malam dengan <b>Shalat Witir</b> (shalat dengan rakaat ganjil).</p>
-                    <img src="https://i.ibb.co.com/qMsS5xy0/5.png" alt="Penyempurna">
-                    <img src="https://i.ibb.co.com/gbSvSwvL/6.png" alt="Pengertian">
-                    <img src="https://i.ibb.co.com/1GRY8dyK/7.png" alt="Urutan">
+                    <img src="https://i.ibb.co.com/gbSvSwvL/6.png" alt="Pengertian Witir">
+                    <div class="inner-navigation">
+                        <div></div>
+                        <button class="btn-inner" onclick="showSubbab('b2-s2', 'btn-b2-s2')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b2-s2" class="sub-content">
+                    <p><b>Waktu Pelaksanaan</b></p>
+                    <p>Shalat Tarawih dan Witir ini dikerjakan kapan ya? Ya, benar sekali! Keduanya dikerjakan pada malam hari sesudah shalat Isya.</p>
+                    <img src="https://i.ibb.co.com/s9jG4rJQ/3.png" alt="Hukum dan Waktu">
+                    <img src="https://i.ibb.co.com/qMsS5xy0/5.png" alt="Penyempurna Malam">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b2-s1', 'btn-b2-s1')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b2-s3', 'btn-b2-s3')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b2-s3" class="sub-content">
+                    <p><b>Tata Cara Pelaksanaan</b></p>
+                    <p>Ayo kita ingat-ingat berapa rakaat Shalat Tarawih dan Witir yang biasa teman-teman kerjakan di masjid?</p>
+                    <img src="https://i.ibb.co.com/HfGM2BKq/4.png" alt="Jumlah rakaat Tarawih">
+                    <img src="https://i.ibb.co.com/1GRY8dyK/7.png" alt="Urutan Witir">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b2-s2', 'btn-b2-s2')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b2-s4', 'btn-b2-s4')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b2-s4" class="sub-content">
+                    <p><b>Keutamaan Tarawih dan Witir</b></p>
+                    <p>Malam Ramadhan sangat sayang jika dilewatkan dengan tidur saja. Pahala yang Allah berikan sangat berlimpah lho untuk anak yang rajin Tarawih!</p>
                     <img src="https://i.ibb.co.com/N28Xvc7P/8.png" alt="Fadhilah">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b2-s3', 'btn-b2-s3')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b2-video', 'btn-b2-vid')" style="background:var(--accent);">Tonton Video 🎥 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b2-video" class="sub-content">
-                    <p>Lihat asyiknya anak-anak ini melaksanakan shalat di malam Ramadhan!</p>
+                    <p>Lihat asyiknya anak-anak di video ini melaksanakan shalat malam bersama-sama!</p>
                     <div class="iframe-wrapper">
                         <div class="iframe-container">
                             <iframe src="https://www.youtube.com/embed/7ewEvRK4g10" allowfullscreen></iframe>
                         </div>
                     </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b2-s4', 'btn-b2-s4')">⬅ Kembali ke Materi</button>
+                        <button class="btn-inner" onclick="showSubbab('b2-game', 'btn-b2-game')" style="background:#FBC02D; color:#333;">Main Game 🎮 ➡</button>
+                    </div>
+                </div>
+
+                <div id="b2-game" class="sub-content">
+                    <div class="action-box">
+                        <h3>Bintang Malam Ramadhan! 🌟</h3>
+                        <p>Mainkan teka-teki misteri malam Ramadhan ini bersama teman-temanmu!</p>
+                        <a href="https://gemini.google.com/share/d656a55be637" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">Mulai Main Game</a>
+                    </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b2-video', 'btn-b2-vid')">⬅ Tonton Video Lagi</button>
+                        <button class="btn-inner" onclick="showSubbab('b2-kuis', 'btn-b2-quiz')" style="background:var(--primary);">Lanjut ke Quiz 📝 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b2-kuis" class="sub-content">
                     <div class="action-box">
-                        <h3>Bintang Malam Ramadhan 🌟</h3>
-                        <p>Ayo selesaikan misi teka-teki dan kuis malam ini untuk mendapat skor terbaikmu!</p>
-                        <a href="https://gemini.google.com/share/d656a55be637" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">🎮 Teka-Teki Tarawih</a>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVKd8MJUAFuubOIx2c9NQ98yjbyhsjO9SJSAClCy7nkc7taA/viewform" target="_blank" class="btn-action-large">📝 Uji Wawasan Malam</a>
+                        <h3>Uji Wawasanmu! 📝</h3>
+                        <p>Sudah siap jadi juara? Kerjakan soal kuis dengan teliti ya!</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVKd8MJUAFuubOIx2c9NQ98yjbyhsjO9SJSAClCy7nkc7taA/viewform" target="_blank" class="btn-action-large">Kerjakan Kuis Sekarang</a>
+                    </div>
+                    <div class="inner-navigation" style="justify-content: center;">
+                        <button class="btn-inner" onclick="showSubbab('b2-game', 'btn-b2-game')">⬅ Kembali ke Game</button>
                     </div>
                 </div>
 
@@ -148,47 +257,100 @@
 
             <div id="bab-3" class="content-wrapper">
                 <div class="bab-header">
-                    <h1 class="bab-title">BAB 3: Kondisi Khusus Shalat</h1>
-                    <p class="kid-intro">Pernahkah kamu bepergian jauh saat mudik atau sedang sakit di rumah sakit? Ternyata Allah memberikan keringanan shalat lho, namanya rukhsoh. Mau tahu caranya?</p>
+                    <h1 class="bab-title">BAB 3: Kemudahan Shalat</h1>
+                    <p class="kid-intro">Pernahkah teman-teman bepergian jauh saat mudik atau sedang sakit di rumah sakit? Ternyata Allah Maha Baik lho, Allah memberikan keringanan shalat untuk kita. Namanya rukhsoh. Mau tahu caranya?</p>
                 </div>
 
                 <div class="subbab-nav">
-                    <button class="subbab-btn active" onclick="showSubbab('b3-materi', this)">🎒 Jamak & Qashar</button>
-                    <button class="subbab-btn" onclick="showSubbab('b3-video', this)">🎬 Video Belajar</button>
-                    <button class="subbab-btn btn-game" onclick="showSubbab('b3-kuis', this)">🎮 Kuis & Game</button>
+                    <button id="btn-b3-s1" class="subbab-btn active" onclick="showSubbab('b3-s1', 'btn-b3-s1')">1. Orang Sakit</button>
+                    <button id="btn-b3-s2" class="subbab-btn" onclick="showSubbab('b3-s2', 'btn-b3-s2')">2. Musafir</button>
+                    <button id="btn-b3-s3" class="subbab-btn" onclick="showSubbab('b3-s3', 'btn-b3-s3')">3. Jamak & Qasar</button>
+                    <button id="btn-b3-s4" class="subbab-btn" onclick="showSubbab('b3-s4', 'btn-b3-s4')">4. Hikmah</button>
+                    <button id="btn-b3-vid" class="subbab-btn btn-media" onclick="showSubbab('b3-video', 'btn-b3-vid')">🎥 Video</button>
+                    <button id="btn-b3-game" class="subbab-btn btn-media" onclick="showSubbab('b3-game', 'btn-b3-game')">🎮 Game</button>
+                    <button id="btn-b3-quiz" class="subbab-btn btn-media" onclick="showSubbab('b3-kuis', 'btn-b3-quiz')">📝 Quiz</button>
                 </div>
 
-                <div id="b3-materi" class="sub-content active">
-                    <p>Ini adalah cara kita menggabung (Jamak) atau meringkas (Qashar) shalat saat bepergian.</p>
+                <div id="b3-s1" class="sub-content active">
+                    <p><b>Shalat Orang Sakit</b></p>
+                    <p>Ibadah shalat itu sangat penting! Meski kita sedang sakit dan tidak bisa berdiri, kita tetap bisa shalat sambil duduk atau berbaring.</p>
+                    <img src="https://i.ibb.co.com/mr6DtVqV/macam-macam-shalat-6.png" alt="Shalat Sakit">
+                    <div class="inner-navigation">
+                        <div></div>
+                        <button class="btn-inner" onclick="showSubbab('b3-s2', 'btn-b3-s2')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b3-s2" class="sub-content">
+                    <p><b>Shalat Musafir (Orang yang Bepergian)</b></p>
+                    <p>Jika kita sedang bepergian jauh (seperti di kereta atau pesawat) atau sedang dalam keadaan berbahaya, Allah mempermudah kita dalam menunaikan shalat.</p>
+                    <img src="https://i.ibb.co.com/mVrWbSKF/macam-macam-shalat-8.png" alt="Shalat Kendaraan">
+                    <img src="https://i.ibb.co.com/TDfCycRQ/macam-macam-shalat-7.png" alt="Dalam Bahaya">
+                    <img src="https://i.ibb.co.com/BKd6s4dJ/macam-macam-shalat-9.png" alt="Tayamum">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b3-s1', 'btn-b3-s1')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b3-s3', 'btn-b3-s3')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b3-s3" class="sub-content">
+                    <p><b>Jamak dan Qasar</b></p>
+                    <p>Teman-teman tahu tidak? Kita boleh menggabung dua shalat (Jamak) dan meringkas jumlah rakaatnya menjadi lebih sedikit (Qashar) kalau sedang bepergian jauh lho!</p>
                     <img src="https://i.ibb.co.com/kg7qpqzn/macam-macam-shalat.png" alt="Materi">
                     <img src="https://i.ibb.co.com/rKDwfDFP/macam-macam-shalat-1.png">
                     <img src="https://i.ibb.co.com/217jG4tD/macam-macam-shalat-2.png">
                     <img src="https://i.ibb.co.com/MkXLWkcm/macam-macam-shalat-3.png">
                     <img src="https://i.ibb.co.com/21dzrwJs/macam-macam-shalat-4.png">
                     <img src="https://i.ibb.co.com/ym4WkbCV/macam-macam-shalat-5.png">
-                    <p>Dan ini panduan khusus jika kamu sedang sakit atau berada di dalam kendaraan seperti kereta atau pesawat.</p>
-                    <img src="https://i.ibb.co.com/mr6DtVqV/macam-macam-shalat-6.png">
-                    <img src="https://i.ibb.co.com/TDfCycRQ/macam-macam-shalat-7.png">
-                    <img src="https://i.ibb.co.com/mVrWbSKF/macam-macam-shalat-8.png">
-                    <img src="https://i.ibb.co.com/BKd6s4dJ/macam-macam-shalat-9.png">
-                    <img src="https://i.ibb.co.com/7xgVqmWy/macam-macam-shalat-10.png">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b3-s2', 'btn-b3-s2')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b3-s4', 'btn-b3-s4')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b3-s4" class="sub-content">
+                    <p><b>Hikmah Kemudahan dalam Shalat</b></p>
+                    <p>Mempelajari ini membuat kita sadar bahwa Islam itu agama yang sangat memudahkan umatnya dan tidak pernah memaksa di luar kemampuan kita.</p>
+                    <img src="https://i.ibb.co.com/7xgVqmWy/macam-macam-shalat-10.png" alt="Ringkasan">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b3-s3', 'btn-b3-s3')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b3-video', 'btn-b3-vid')" style="background:var(--accent);">Tonton Video 🎥 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b3-video" class="sub-content">
-                    <p>Saksikan panduan bergambar cara shalat musafir (orang yang bepergian) di video ini.</p>
+                    <p>Mari lihat panduan bergambar yang sangat mudah dipahami tentang shalat saat sakit dan di kendaraan.</p>
                     <div class="iframe-wrapper">
                         <div class="iframe-container">
                             <iframe src="https://www.youtube.com/embed/kc-5C-uV5Hk" allowfullscreen></iframe>
                         </div>
                     </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b3-s4', 'btn-b3-s4')">⬅ Kembali ke Materi</button>
+                        <button class="btn-inner" onclick="showSubbab('b3-game', 'btn-b3-game')" style="background:#FBC02D; color:#333;">Main Game 🎮 ➡</button>
+                    </div>
+                </div>
+
+                <div id="b3-game" class="sub-content">
+                    <div class="action-box">
+                        <h3>Misi Musafir Tangguh! 🎒</h3>
+                        <p>Mari bermain peran menjadi anak musafir yang harus menyelesaikan ujian shalat di perjalanan!</p>
+                        <a href="https://gemini.google.com/share/a914411cb3c3" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">Mainkan Petualangan</a>
+                    </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b3-video', 'btn-b3-vid')">⬅ Tonton Video Lagi</button>
+                        <button class="btn-inner" onclick="showSubbab('b3-kuis', 'btn-b3-quiz')" style="background:var(--primary);">Lanjut ke Quiz 📝 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b3-kuis" class="sub-content">
                     <div class="action-box">
-                        <h3>Misi Musafir Tangguh! 🎒</h3>
-                        <p>Mari bermain peran menjadi musafir cilik yang harus menyelesaikan ujian shalat di perjalanan!</p>
-                        <a href="https://gemini.google.com/share/a914411cb3c3" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">🎮 Petualangan Musafir</a>
-                        <a href="https://forms.gle/vq3xXQ9xE69AtAnr6" target="_blank" class="btn-action-large">📝 Kuis Perjalanan Hebat</a>
+                        <h3>Ujian Penjelajah Cilik! 📝</h3>
+                        <p>Apakah kamu ingat cara menjamak shalat? Kerjakan kuis ini dan buktikan kehebatanmu.</p>
+                        <a href="https://forms.gle/vq3xXQ9xE69AtAnr6" target="_blank" class="btn-action-large">Kerjakan Kuis Penjelajah</a>
+                    </div>
+                    <div class="inner-navigation" style="justify-content: center;">
+                        <button class="btn-inner" onclick="showSubbab('b3-game', 'btn-b3-game')">⬅ Kembali ke Game</button>
                     </div>
                 </div>
 
@@ -200,46 +362,99 @@
 
             <div id="bab-4" class="content-wrapper">
                 <div class="bab-header">
-                    <h1 class="bab-title">BAB 4: Puasa Ramadhan</h1>
-                    <p class="kid-intro">Bulan puasa adalah bulan penuh kegembiraan! Kita menahan lapar dan haus dari terbit fajar sampai azan maghrib berkumandang. Tapi, apa saja aturannya ya?</p>
+                    <h1 class="bab-title">BAB 4: Puasa Wajib (Ramadan)</h1>
+                    <p class="kid-intro">Bulan puasa adalah bulan penuh kegembiraan! Kita menahan lapar dan haus dari terbit fajar sampai azan maghrib berkumandang. Tapi, apa saja aturannya ya? Yuk, baca di sini!</p>
                 </div>
 
                 <div class="subbab-nav">
-                    <button class="subbab-btn active" onclick="showSubbab('b4-materi', this)">📚 Syarat & Rukun</button>
-                    <button class="subbab-btn" onclick="showSubbab('b4-video', this)">🎬 Video Seru</button>
-                    <button class="subbab-btn btn-game" onclick="showSubbab('b4-kuis', this)">🎮 Kuis Juara</button>
+                    <button id="btn-b4-s1" class="subbab-btn active" onclick="showSubbab('b4-s1', 'btn-b4-s1')">1. Pengertian</button>
+                    <button id="btn-b4-s2" class="subbab-btn" onclick="showSubbab('b4-s2', 'btn-b4-s2')">2. Syarat & Rukun</button>
+                    <button id="btn-b4-s3" class="subbab-btn" onclick="showSubbab('b4-s3', 'btn-b4-s3')">3. Hal Batal</button>
+                    <button id="btn-b4-s4" class="subbab-btn" onclick="showSubbab('b4-s4', 'btn-b4-s4')">4. Keutamaan</button>
+                    <button id="btn-b4-vid" class="subbab-btn btn-media" onclick="showSubbab('b4-video', 'btn-b4-vid')">🎥 Video</button>
+                    <button id="btn-b4-game" class="subbab-btn btn-media" onclick="showSubbab('b4-game', 'btn-b4-game')">🎮 Game</button>
+                    <button id="btn-b4-quiz" class="subbab-btn btn-media" onclick="showSubbab('b4-kuis', 'btn-b4-quiz')">📝 Quiz</button>
                 </div>
 
-                <div id="b4-materi" class="sub-content active">
-                    <p>Supaya puasa kita sah dan diterima Allah, kita harus tahu syarat dan rukunnya teman-teman!</p>
-                    <img src="https://i.ibb.co.com/21j4kCzB/1.png">
-                    <img src="https://i.ibb.co.com/VFBKZ7M/2.png">
-                    <img src="https://i.ibb.co.com/RLNXX1V/3.png">
-                    <img src="https://i.ibb.co.com/BH8x7Ybd/4.png">
-                    <img src="https://i.ibb.co.com/84zqnxWN/5.png">
-                    <img src="https://i.ibb.co.com/1fwHPtZx/6.png">
-                    <p>Pintu surga Ar-Rayyan menanti anak-anak yang rajin puasa. Yuk lihat keutamaan lainnya!</p>
-                    <img src="https://i.ibb.co.com/7J23QYHh/7.png">
-                    <img src="https://i.ibb.co.com/ccvT3t43/8.png">
-                    <img src="https://i.ibb.co.com/LXtPMvbX/9.png">
-                    <img src="https://i.ibb.co.com/ZzC9mpJC/10.png">
+                <div id="b4-s1" class="sub-content active">
+                    <p><b>Pengertian Puasa Ramadan</b></p>
+                    <p>Puasa itu menahan diri dari makan, minum, dan hal buruk lainnya, dimulai dari subuh sampai tenggelamnya matahari. Seru banget karena sahur dan buka puasa dilakukan bersama-sama!</p>
+                    <img src="https://i.ibb.co.com/21j4kCzB/1.png" alt="Materi">
+                    <img src="https://i.ibb.co.com/VFBKZ7M/2.png" alt="Pengertian">
+                    <img src="https://i.ibb.co.com/RLNXX1V/3.png" alt="Waktu Pelaksanaan">
+                    <div class="inner-navigation">
+                        <div></div>
+                        <button class="btn-inner" onclick="showSubbab('b4-s2', 'btn-b4-s2')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b4-s2" class="sub-content">
+                    <p><b>Syarat dan Rukun Puasa</b></p>
+                    <p>Supaya puasa kita sah dan diterima Allah, kita harus tahu syarat dan rukunnya teman-teman! Jangan lupa niat di malam hari ya.</p>
+                    <img src="https://i.ibb.co.com/BH8x7Ybd/4.png" alt="Syarat">
+                    <img src="https://i.ibb.co.com/84zqnxWN/5.png" alt="Rukun">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b4-s1', 'btn-b4-s1')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b4-s3', 'btn-b4-s3')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b4-s3" class="sub-content">
+                    <p><b>Hal yang Membatalkan Puasa</b></p>
+                    <p>Hati-hati! Ada beberapa hal yang bisa membuat puasa kita batal (gagal). Perhatikan gambar di bawah ini agar kita bisa menghindarinya.</p>
+                    <img src="https://i.ibb.co.com/1fwHPtZx/6.png" alt="Batal Puasa">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b4-s2', 'btn-b4-s2')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b4-s4', 'btn-b4-s4')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b4-s4" class="sub-content">
+                    <p><b>Keutamaan dan Amalan Ramadan</b></p>
+                    <p>Tahukah kamu? Ada pintu surga khusus bernama Ar-Rayyan untuk hamba Allah yang rajin berpuasa! Wah, semoga kita semua bisa masuk dari pintu itu ya.</p>
+                    <img src="https://i.ibb.co.com/7J23QYHh/7.png" alt="Amalan">
+                    <img src="https://i.ibb.co.com/ccvT3t43/8.png" alt="Keutamaan">
+                    <img src="https://i.ibb.co.com/LXtPMvbX/9.png" alt="Ringkasan">
+                    <img src="https://i.ibb.co.com/ZzC9mpJC/10.png" alt="Penutup">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b4-s3', 'btn-b4-s3')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b4-video', 'btn-b4-vid')" style="background:var(--accent);">Tonton Video 🎥 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b4-video" class="sub-content">
-                    <p>Tonton kisah menarik tentang kehebatan anak-anak yang kuat berpuasa Ramadhan!</p>
+                    <p>Tonton animasi seru tentang serunya anak-anak berpuasa dan menahan diri dari godaan di bulan Ramadan!</p>
                     <div class="iframe-wrapper">
                         <div class="iframe-container">
                             <iframe src="https://www.youtube.com/embed/sjRd94ZaPSI" allowfullscreen></iframe>
                         </div>
                     </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b4-s4', 'btn-b4-s4')">⬅ Kembali ke Materi</button>
+                        <button class="btn-inner" onclick="showSubbab('b4-game', 'btn-b4-game')" style="background:#FBC02D; color:#333;">Main Game 🎮 ➡</button>
+                    </div>
+                </div>
+
+                <div id="b4-game" class="sub-content">
+                    <div class="action-box">
+                        <h3>Pahlawan Ramadan! 🦸‍♂️</h3>
+                        <p>Jadilah juara puasa dengan memecahkan rahasia pada game petualangan di bawah ini!</p>
+                        <a href="https://gemini.google.com/share/2c895827f036" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">Main Detektif Ramadan</a>
+                    </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b4-video', 'btn-b4-vid')">⬅ Tonton Video Lagi</button>
+                        <button class="btn-inner" onclick="showSubbab('b4-kuis', 'btn-b4-quiz')" style="background:var(--primary);">Lanjut ke Quiz 📝 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b4-kuis" class="sub-content">
                     <div class="action-box">
-                        <h3>Pahlawan Ramadhan! 🦸‍♂️</h3>
-                        <p>Jadilah juara puasa dengan memecahkan rahasia pada game dan kuis di bawah ini.</p>
-                        <a href="https://gemini.google.com/share/2c895827f036" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">🎮 Detektif Ramadhan</a>
-                        <a href="https://forms.gle/bKigbdjehdzy4xgn7" target="_blank" class="btn-action-large">📝 Kuis Bintang Puasa</a>
+                        <h3>Kuis Bintang Puasa 📝</h3>
+                        <p>Kumpulkan skormu sekarang dengan menjawab pertanyaan serputar Ramadan dengan tepat!</p>
+                        <a href="https://forms.gle/bKigbdjehdzy4xgn7" target="_blank" class="btn-action-large">Mulai Kuis Cerdas</a>
+                    </div>
+                    <div class="inner-navigation" style="justify-content: center;">
+                        <button class="btn-inner" onclick="showSubbab('b4-game', 'btn-b4-game')">⬅ Kembali ke Game</button>
                     </div>
                 </div>
 
@@ -252,42 +467,95 @@
             <div id="bab-5" class="content-wrapper">
                 <div class="bab-header">
                     <h1 class="bab-title">BAB 5: Puasa Sunnah</h1>
-                    <p class="kid-intro">Wah kita sudah di bab terakhir! Selain Ramadhan, tahukah kamu kalau Rasulullah juga suka berpuasa di hari lain? Namanya Puasa Sunnah. Banyak lho manfaatnya buat kesehatan kita!</p>
+                    <p class="kid-intro">Wah, kita sudah sampai di bab terakhir! Tahukah kamu kalau Rasulullah juga suka berpuasa di hari lain selain bulan Ramadan? Namanya Puasa Sunnah. Banyak lho manfaatnya buat kesehatan tubuh kita!</p>
                 </div>
 
                 <div class="subbab-nav">
-                    <button class="subbab-btn active" onclick="showSubbab('b5-materi', this)">📚 Slide Macam Puasa</button>
-                    <button class="subbab-btn" onclick="showSubbab('b5-video', this)">🎬 Video Belajar</button>
-                    <button class="subbab-btn btn-game" onclick="showSubbab('b5-kuis', this)">🎮 Kuis Terakhir</button>
+                    <button id="btn-b5-s1" class="subbab-btn active" onclick="showSubbab('b5-s1', 'btn-b5-s1')">1. Pengertian</button>
+                    <button id="btn-b5-s2" class="subbab-btn" onclick="showSubbab('b5-s2', 'btn-b5-s2')">2. Macam-Macam</button>
+                    <button id="btn-b5-s3" class="subbab-btn" onclick="showSubbab('b5-s3', 'btn-b5-s3')">3. Tata Cara</button>
+                    <button id="btn-b5-s4" class="subbab-btn" onclick="showSubbab('b5-s4', 'btn-b5-s4')">4. Hikmah</button>
+                    <button id="btn-b5-vid" class="subbab-btn btn-media" onclick="showSubbab('b5-video', 'btn-b5-vid')">🎥 Video</button>
+                    <button id="btn-b5-game" class="subbab-btn btn-media" onclick="showSubbab('b5-game', 'btn-b5-game')">🎮 Game</button>
+                    <button id="btn-b5-quiz" class="subbab-btn btn-media" onclick="showSubbab('b5-kuis', 'btn-b5-quiz')">📝 Quiz</button>
                 </div>
 
-                <div id="b5-materi" class="sub-content active">
-                    <p>Geser gambar presentasi di bawah ini untuk melihat puasa apa saja yang disunnahkan.</p>
+                <div id="b5-s1" class="sub-content active">
+                    <p><b>Pengertian Puasa Sunnah</b></p>
+                    <p>Puasa sunnah adalah puasa yang sangat dianjurkan oleh Rasulullah. Jika dikerjakan akan mendapat pahala besar, tapi jika tidak dikerjakan tidak berdosa.</p>
                     <div class="iframe-wrapper">
                         <div class="iframe-container">
                             <iframe src="https://www.canva.com/design/DAHJnHYPH2w/FHrJwm6hhopdkLDo4CUwgA/view?embed" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <img src="https://i.ibb.co.com/RTWxfPC4/Chat-GPT-Image-May-18-2026-05-50-57-AM.png">
-                    <p>Puasanya bikin sehat? Betul sekali! Ini dia alasannya mengapa puasa itu menyehatkan tubuh.</p>
-                    <img src="https://i.ibb.co.com/q3x3cBzr/manfaat-puasa-sunah.png">
+                    <div class="inner-navigation">
+                        <div></div>
+                        <button class="btn-inner" onclick="showSubbab('b5-s2', 'btn-b5-s2')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b5-s2" class="sub-content">
+                    <p><b>Macam-Macam Puasa Sunnah</b></p>
+                    <p>Ada banyak sekali puasa sunnah, seperti Puasa Senin-Kamis, Puasa Syawal, Puasa Arafah, dan Puasa Daud.</p>
+                    <img src="https://i.ibb.co.com/RTWxfPC4/Chat-GPT-Image-May-18-2026-05-50-57-AM.png" alt="Pengertian Puasa Sunnah">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b5-s1', 'btn-b5-s1')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b5-s3', 'btn-b5-s3')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b5-s3" class="sub-content">
+                    <p><b>Tata Cara Puasa Sunnah</b></p>
+                    <p>Tata caranya sama persis dengan Puasa Ramadan kok teman-teman. Kita sahur di pagi buta dan berbuka saat azan maghrib tiba. Hanya saja niatnya berbeda-beda sesuai jenis puasanya.</p>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b5-s2', 'btn-b5-s2')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b5-s4', 'btn-b5-s4')">Subbab Selanjutnya ➡</button>
+                    </div>
+                </div>
+
+                <div id="b5-s4" class="sub-content">
+                    <p><b>Hikmah Puasa Sunnah</b></p>
+                    <p>Puasanya bikin kita sehat? Betul sekali! Ini dia alasan mengapa puasa sunnah itu sangat menyehatkan bagi tubuh dan pikiran kita.</p>
+                    <img src="https://i.ibb.co.com/q3x3cBzr/manfaat-puasa-sunah.png" alt="Manfaat Puasa Sunnah">
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b5-s3', 'btn-b5-s3')">⬅ Sebelumnya</button>
+                        <button class="btn-inner" onclick="showSubbab('b5-video', 'btn-b5-vid')" style="background:var(--accent);">Tonton Video 🎥 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b5-video" class="sub-content">
-                    <p>Tonton penjelasan seru ini sebagai materi tambahanmu ya!</p>
+                    <p>Tonton penjelasan animasi tentang asyiknya berpuasa sunnah sebagai pelengkap ibadah kita!</p>
                     <div class="iframe-wrapper">
                         <div class="iframe-container">
                             <iframe src="https://www.youtube.com/embed/e1jEjuLCMPA" allowfullscreen></iframe>
                         </div>
                     </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b5-s4', 'btn-b5-s4')">⬅ Kembali ke Materi</button>
+                        <button class="btn-inner" onclick="showSubbab('b5-game', 'btn-b5-game')" style="background:#FBC02D; color:#333;">Main Game 🎮 ➡</button>
+                    </div>
+                </div>
+
+                <div id="b5-game" class="sub-content">
+                    <div class="action-box">
+                        <h3>Misi Kelulusan Gen-Mu! 🎉</h3>
+                        <p>Kamu hebat karena sudah sampai di bab terakhir! Selesaikan teka-teki tebak puasa sunnah ini ya!</p>
+                        <a href="https://gemini.google.com/share/930f132ad4be" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">Main Tebak Sunnah</a>
+                    </div>
+                    <div class="inner-navigation">
+                        <button class="btn-inner" onclick="showSubbab('b5-video', 'btn-b5-vid')">⬅ Tonton Video Lagi</button>
+                        <button class="btn-inner" onclick="showSubbab('b5-kuis', 'btn-b5-quiz')" style="background:var(--primary);">Lanjut ke Quiz Terakhir 📝 ➡</button>
+                    </div>
                 </div>
 
                 <div id="b5-kuis" class="sub-content">
                     <div class="action-box">
-                        <h3>Misi Kelulusan Gen-Mu! 🎉</h3>
-                        <p>Kamu hebat! Selesaikan misi pamungkas ini dan jadilah generasi hebat yang taat ibadah.</p>
-                        <a href="https://gemini.google.com/share/930f132ad4be" target="_blank" class="btn-action-large" style="background:#FBC02D; color:#333;">🎮 Game Super Sunnah</a>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmzcV0EsnE9yLa6hleEWP20BOaMUP3xI5NhfQaWSq5zLbfsg/viewform" target="_blank" class="btn-action-large">📝 Ujian Akhir Hebat</a>
+                        <h3>Ujian Kelulusan Hebat! 🏆</h3>
+                        <p>Mari tuntaskan tugas terakhirmu! Kumpulkan nilai 100 dan jadilah anak taat kebanggaan orang tua.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmzcV0EsnE9yLa6hleEWP20BOaMUP3xI5NhfQaWSq5zLbfsg/viewform" target="_blank" class="btn-action-large">Kerjakan Ujian Akhir</a>
+                    </div>
+                    <div class="inner-navigation" style="justify-content: center;">
+                        <button class="btn-inner" onclick="showSubbab('b5-game', 'btn-b5-game')">⬅ Kembali ke Game</button>
                     </div>
                 </div>
 
