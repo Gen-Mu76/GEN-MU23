@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>GenMu - Pembelajaran</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <h2>GenMu</h2>
+  </div>
+</header>
+
+<div class="container" style="display:flex; gap:20px; margin-top:20px;">
+
+  <!-- SIDEBAR -->
+  <aside style="width:30%;">
+    <h3>Daftar Bab</h3>
+    <ul>
+      <li>Bab 1</li>
+      <li>Bab 2</li>
+      <li>Bab 3</li>
+      <li>Bab 4</li>
+    </ul>
+  </aside>
+
+  <!-- KONTEN -->
+  <main style="width:70%;">
+    <h2>Materi Pembelajaran</h2>
+
+    <p>Thaharah adalah cara bersuci dari hadas dan najis.</p>
+
+    <img src="https://i.ibb.co.com/KjMq0Vty/gambar-wudhu.png" alt="Ilustrasi wudhu" style="width:100%;">
+
+    <iframe width="100%" height="300"
+      src="https://www.youtube.com/embed/RCDf4c7P0KQ">
+    </iframe>
+  </main>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenMu LMS</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ===== TAMBAHAN KHUSUS LMS ===== */
+    .lms {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 260px;
+      background: var(--primary);
+      padding: 20px;
+      color: white;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .sidebar li:hover {
+      background: var(--accent);
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      background: var(--bg);
+    }
+
+    .content iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .btn-link {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    @media(max-width:768px){
+      .lms {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+  <div class="container">
+    <h2>GenMu LMS</h2>
+    <p>Pembelajaran Fikih Interaktif</p>
+  </div>
+</header>
+
+<div class="lms">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <h3>Daftar Materi</h3>
+    <ul>
+      <li onclick="loadBab(1)">Bab 1: Sunnah Rawatib</li>
+      <li onclick="loadBab(2)">Bab 2: Shalat Malam</li>
+      <li onclick="loadBab(3)">Bab 3: Shalat Kondisi</li>
+      <li onclick="loadBab(4)">Bab 4: Puasa Ramadhan</li>
+      <li onclick="loadBab(5)">Bab 5: Puasa Sunnah</li>
+    </ul>
+  </aside>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="content" id="content">
+
+    <h2>Selamat Datang di GenMu</h2>
+    <p>Pilih materi di sebelah kiri untuk mulai belajar.</p>
+
+  </main>
+
+</div>
+
+<script>
+/* ================= DATA MATERI ================= */
+const materi = {
+
+  1: `
+    <h2>Bab 1: Sunnah Rawatib</h2>
+
+    <iframe src="https://www.canva.com/design/DAHIZ3nWmEk/SWTMvJckuFVGY7OxhTVUNA/view?embed"></iframe>
+
+    <iframe src="https://www.youtube.com/embed/tbW09utaEtI"></iframe>
+
+    <a class="btn-link" href="https://gemini.google.com/share/36d90bb99d57" target="_blank">Main Game</a>
+    <a class="btn-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdM5jaK8Y3mOtXR7SQEhE9ncXJploQ3P6SbhxzsRTDb-ASU7Q/viewform" target="_blank">Kerjakan Quiz</a>
+  `,
+
+  2: `
+    <h2>Bab 2: Shalat Malam</h2>
+
+    <iframe src="https://www.canva.com/design/DAHIaDIF8fA/xpWSU_RvVpdTiH4ypa82mA/view?embed"></iframe>
+
+    <iframe src="https://www.youtube.com/embed/SNVM8bPlToE"></iframe>
+
+    <a class="btn-link" href="https://gemini.google.com/share/d656a55be637" target="_blank">Main Game</a>
+  `,
+
+  3: `
+    <h2>Bab 3: Shalat Berbagai Kondisi</h2>
+
+    <iframe src="https://www.youtube.com/embed/kc-5C-uV5Hk"></iframe>
+
+    <a class="btn-link" href="https://gemini.google.com/share/a914411cb3c3" target="_blank">Main Game</a>
+    <a class="btn-link" href="https://forms.gle/qiUdZjL5bH6VaZ1o9" target="_blank">Kerjakan Quiz</a>
+  `,
+
+  4: `
+    <h2>Bab 4: Puasa Ramadhan</h2>
+
+    <iframe src="https://www.canva.com/design/DAHIZz483wI/_BLXgtpCYNtxYvBm8jqbpQ/view?embed"></iframe>
+
+    <iframe src="https://www.youtube.com/embed/sjRd94ZaPSI"></iframe>
+
+    <a class="btn-link" href="https://gemini.google.com/share/1fdc43277bcb" target="_blank">Main Game</a>
+    <a class="btn-link" href="https://forms.gle/bKigbdjehdzy4xgn7" target="_blank">Kerjakan Quiz</a>
+  `,
+
+  5: `
+    <h2>Bab 5: Puasa Sunnah</h2>
+
+    <iframe src="https://www.canva.com/design/DAHIZ9Xa7uc/vOAvdLJu7FupNnLc_0498A/view?embed"></iframe>
+
+    <iframe src="https://www.youtube.com/embed/RcrBIlYACvY"></iframe>
+
+    <a class="btn-link" href="https://gemini.google.com/share/930f132ad4be" target="_blank">Main Game</a>
+    <a class="btn-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfmzcV0EsnE9yLa6hleEWP20BOaMUP3xI5NhfQaWSq5zLbfsg/viewform" target="_blank">Kerjakan Quiz</a>
+  `
+};
+
+/* ================= LOAD MATERI ================= */
+function loadBab(bab){
+  document.getElementById("content").innerHTML = materi[bab];
+}
+</script>
+
+</body>
+</html>
